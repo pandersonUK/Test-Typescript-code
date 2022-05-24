@@ -1,0 +1,1 @@
+console.log('tsc app.tstype your code here ... ');
