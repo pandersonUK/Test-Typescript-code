@@ -1,1 +1,1 @@
-console.log('tsc app.tstype your code here ... ');
+console.log('type your code here ... ');
