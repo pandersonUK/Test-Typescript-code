@@ -1,58 +1,30 @@
-enum RoleID {USER = 0, OFFICER, ADMINID}
-enum RoleName {Low = 'User', Med = 'officer', High = 'admin'}
+type calcType = 'addition' | 'subtraction' | 'division';
 
-const person: {
-    name: string;
-    nickname: string;
-    age: number;
-    hobbies: string[];
-    role: [number, string]
-}={
-    name: 'Peter',
-    nickname: 'Pete',
-    age: 29,
-    hobbies: ['skiing', 'dancing'],
-    role: [RoleID.USER, RoleName.Low]
-};
 
-let favouriteActivities: any[]; /* any type allows a mixed array. Ideally it's better to use typed variables. */
-favouriteActivities = ['Sports', 1];
-
-if (person.role[0] === 0){
-    console.log('user ' + person.name + ' has security clearance ' + person.role[1]);
-}
-
-console.log(person.nickname);
-
-for (const activities of person.hobbies){
-    console.log(activities.toUpperCase());
-}
-
-/* 
-Object declaration.
-both acceptable, first better.
-
-const product: {
-    id: string;
-    price: number;
-    tags: string[];
-    details: {
-        title: string;
-        description: string;
-    }
-} = {
-    id: 'abc1',
-    price: 12.99
-    tags: ['great-offer', 'hot-and-new'],
-    details: {
-        title: 'Red Carpet',
-        description: 'A great carpet - almost brand-new!'
+function calculator(n1: number, n2: number, calculate: calcType){
+    if (calculate === 'addition'){
+return n1 + n2;
+    }else if(calculate === 'subtraction'){
+return n1 - n2;
+    }else{
+return n1 / n2;
     }
 }
 
-const person: object = {
-    name = jim,
-    age = 40
+// function add(n1: number, n2: number){
+//     return n1 + n2;
+// }
+
+// function subtract(n1: number, n2: number){
+//     return n1 - n2;
+// }
+
+// function divide(n1: number, n2: number){
+//     return n1 / n2;
+// }
+
+function printResults(results: number){
+console.log('Result: ' + results);
 }
 
-*/
+printResults(calculator(5, 9, 'addition'));
