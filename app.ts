@@ -44,7 +44,7 @@ addAndHandle(10, 20, (result) => {
 console.log(result);
 });
 
-
+//Generating Error Codes
 function generateError(message: string, code: number): never{
     throw{message: message, errorcode: code};
 }
