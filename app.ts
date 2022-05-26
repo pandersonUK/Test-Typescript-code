@@ -22,7 +22,6 @@ if (person.role[0] === 0){
     console.log('user ' + person.name + ' has security clearance ' + person.role[1]);
 }
 
-
 console.log(person.nickname);
 
 for (const activities of person.hobbies){
