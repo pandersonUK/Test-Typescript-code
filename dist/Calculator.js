@@ -1,3 +1,4 @@
+"use strict";
 function calculator(n1, n2, calculate) {
     if (calculate === 'addition') {
         return n1 + n2;
@@ -25,15 +26,15 @@ function calculator(n1, n2, calculate) {
 // }
 // printResults(calculator(5, 9, 'addition'));
 //Declare variable numberhandler as function type, expecting 3 inputs and a number based output/return '=>'
-var numberHandler;
+let numberHandler;
 numberHandler = calculator;
 console.log(numberHandler(5, 9, 'addition'));
 //cb Function
 function addAndHandle(n1, n2, cb) {
-    var result = n1 + n2;
+    const result = n1 + n2;
     cb(result);
 }
-addAndHandle(10, 20, function (result) {
+addAndHandle(10, 20, (result) => {
     console.log(result);
 });
 //Generating Error Codes
