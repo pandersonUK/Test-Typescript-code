@@ -1,18 +1,31 @@
 "use strict";
-const hobbies = ["Running", "Cooking", "Fishing", "Dancing", "Leaping"];
-const activeHobbies = ["Hiking"];
-activeHobbies.push(...hobbies);
-console.log(...hobbies);
-console.log(hobbies);
-const person = {
-    name: 'Max',
-    age: 30
-};
-const copiedPerson = Object.assign({}, person);
-console.log(copiedPerson);
-const add = (...numbers) => { return numbers.reduce((curResult, curValue) => { return curResult + curValue; }, 0); };
-const addedNumbers = add(5, 10, 2, 3.7);
-console.log(addedNumbers);
-const [hobby1, hobby2, ...remainingHobbies] = hobbies;
-console.log(hobby1, hobby2, remainingHobbies, hobbies);
+class Department {
+    constructor(n) {
+        this.employees = [];
+        this.name = n;
+    }
+    describe() {
+        console.log("Department: " + this.name);
+    }
+    addEmployee(employee) {
+        this.employees.push(employee);
+    }
+    printEmployeeInformation() {
+        console.log(this.employees.length);
+        console.log(this.employees);
+    }
+}
+class Calculator {
+    constructor(n1, n2) {
+        this.results = n1 + n2;
+    }
+}
+const accounting = new Department('Accounting');
+const results = new Calculator(2, 5);
+console.log(results);
+accounting.addEmployee('Max');
+accounting.addEmployee('John');
+accounting.employees[2] = 'Anna';
+accounting.describe();
+accounting.printEmployeeInformation();
 //# sourceMappingURL=app.js.map
