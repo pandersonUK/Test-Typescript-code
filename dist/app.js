@@ -1,11 +1,12 @@
 "use strict";
 class Department {
-    constructor(n) {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
         this.employees = [];
-        this.name = n;
     }
     describe() {
-        console.log("Department: " + this.name);
+        console.log(`department (${this.name})`);
     }
     addEmployee(employee) {
         this.employees.push(employee);
@@ -15,17 +16,42 @@ class Department {
         console.log(this.employees);
     }
 }
+class ITDepartment extends Department {
+    constructor(id, admins) {
+        super(id, 'IT');
+        this.admins = admins;
+    }
+}
+class AccountingDepartment extends Department {
+    constructor(id, reports) {
+        super(id, 'Accounting');
+        this.reports = reports;
+    }
+    addReports(text) {
+        this.reports.push(text);
+    }
+    printReports() {
+        console.log(this.reports);
+    }
+}
 class Calculator {
     constructor(n1, n2) {
         this.results = n1 + n2;
     }
 }
-const accounting = new Department('Accounting');
+const IT = new ITDepartment('d1', ['Max']);
+const accounting = new AccountingDepartment('d2', []);
 const results = new Calculator(2, 5);
 console.log(results);
-accounting.addEmployee('Max');
-accounting.addEmployee('John');
-accounting.employees[2] = 'Anna';
-accounting.describe();
-accounting.printEmployeeInformation();
+accounting.addReports("Something went wrong...");
+accounting.addEmployee('Steve');
+accounting.addEmployee('Jade');
+IT.addEmployee('Max');
+IT.addEmployee('John');
+IT.name = "IT Department";
+IT.describe();
+IT.printEmployeeInformation();
+accounting.printReports();
+console.log(IT);
+console.log(accounting);
 //# sourceMappingURL=app.js.map
